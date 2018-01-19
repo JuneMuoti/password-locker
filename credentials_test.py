@@ -54,6 +54,11 @@ class TestCredential(unittest.TestCase):
         test_credential.save_credential()
         found_credential = Credentials.find_by_account_name("facebook")
         self.assertEqual(found_credential.account_name,test_credential.account_name)
+    def test_display_all_credentials(self):
+        """
+        method that returns a list of all credentials saved
+        """
+        self.assertEqual(Credentials.display_credentials(),Credentials.credential_list)
 
 
 
