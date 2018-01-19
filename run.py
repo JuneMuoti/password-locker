@@ -27,3 +27,11 @@ def test_display_credentials():
     function to display all Credentials
     """
     return Credentials.display_credentials()
+def main():
+    print("Welcome to Passord Locker")
+    user_name = input()
+    print('\n')
+    print (f"Hello {user_name}. what would you like to do?")
+    print('\n')
+    while True:
+        print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the contact list")
