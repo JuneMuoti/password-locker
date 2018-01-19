@@ -1,14 +1,14 @@
 import unittest
-from user import user
+from user import User
 
-class TestUser(unnittest.TestCase):
+class TestUser(unittest.TestCase):
     """
     A test case that defines test cases for the user class
 
     Args:
     unittest.Testcase: TestCase class that helps in creating test cases
     """
-    def setup(self):
+    def setUp(self):
         """
         Set up method to run before each test case.
         """
@@ -18,7 +18,7 @@ class TestUser(unnittest.TestCase):
         test_init case to test of the object  is initialized properly
         """
         self.assertEqual(self.new_user.first_name,"June")
-        self.asserEqual(self.new_user.last_name,"Muoti")
+        self.assertEqual(self.new_user.last_name,"Muoti")
         self.assertEqual(self.new_user.password,"12345")
 
 if __name__ == '__main__':
