@@ -45,15 +45,15 @@ class TestCredential(unittest.TestCase):
 
         self.new_credential.delete_credential()
         self.assertEqual(len(Credentials.credential_list),1)
-    def test_find_credential_by_account_name(self):
+    def test_find_credential_by_name(self):
         """
         test to check if we can find a credential by its account name and display info
         """
         self.new_credential.save_credential()
-        test_credential = Credentials("facebook","password")
+        test_credential = Credentials("facebook","56789")
         test_credential.save_credential()
         found_credential = Credentials.find_by_account_name("facebook")
-        self.assertEqual(found_contact.password,test_credential.password)
+        self.assertEqual(found_credential.account_name,test_credential.account_name)
 
 
 
