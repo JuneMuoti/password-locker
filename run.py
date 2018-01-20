@@ -35,3 +35,58 @@ def main():
     print('\n')
     while True:
         print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the contact list")
+         short_code = input().lower()
+         if short_code == 'cu':
+             print("NEW PASSWORD LOCKER ACCOUNT")
+             print("~" *10)
+             print("Enter First Name")
+             f_name =input()
+             print ("Enter second name")
+             s_name= input()
+             print ("Enter password")
+             p_word = input()
+             print ("Confirm your password")
+             confirm_password = input()
+             # save_contacts(create_contact(f_name,s_name,p_word))
+
+             print('\n')
+             print(f"Congrats {f_name} ,! You have a new Password account")
+             print('\n')
+             print("proceed to log in to your new account")
+             print("Enter account user name"):
+             firstname = input()
+             lastname = input()
+             print("Enter password:")
+             password = input()
+             while  password != p_word:
+                 print ("You entered incorrect password")
+                 print("Enter account user name:")
+                 firstname = input()
+                 lastname = input()
+                 print("Enter password:")
+                 password = input()
+             else:
+                 print(f"Welcome:{firstname} to your Password locker account")
+                 print ('\n')
+                 print ("Select from the following choices to continue: Enter vc,ac,rc,sc,so")
+                 print ('\n')
+                 if choice == ac:
+
+                         print ("Enter The Account name(eg facebook,instagram, etc):")
+                         account_name = input()
+                         print("Enter the account password:")
+                         account_password = input()
+                         save_new_credential(create_new_credential(account_name,account_password))
+                         print('\n')
+                         print(f"New credential {account_name} added")
+                         print('\n')
+                     else if choice == vc:
+                         print("View all your saved credentials below:")
+                         if display_credentials():
+                             for credential in display_credentials():
+                                 print (f"Account Name:{credential.account_name}")
+                                 print(f"Account Password:{credential.account_password}")
+                             else:
+                                 print("You have not added any credential to your password locker account")
+                             else if choice == fc:
+                                                      
