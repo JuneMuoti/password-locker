@@ -68,7 +68,7 @@ def main():
              else:
                  print(f"Welcome:{firstname} to your Password locker account")
                  print ('\n')
-                 print ("Select from the following choices to continue: Enter vc,ac,rc,sc,so")
+                 print ("Select from the following choices to continue: Enter vc(to view credentials),ac(to add credential),rc(to remove credential),sc(to search credential),so(to sign out)")
                  print ('\n')
                  if choice == ac:
 
@@ -89,4 +89,14 @@ def main():
                              else:
                                  print("You have not added any credential to your password locker account")
                              else if choice == fc:
-                                                      
+                                 print("Enter the acccount name you want to search for in the list of credentials")
+                                 find_name = input()
+                                 if check_existing_credentials(find_name):
+                                     search_credential = find_credential(find_name)
+                                     print (f"{search_credential.account_name} {search_credential.account_password}")
+                                     print('~' *20)
+                                     print('\n')
+                                     print (f"Account Name:{search_credential.account_name}")
+                                     print(f"Account password: {search_credential.account_password}")
+                                 else:
+                                     print("That account does not exixt")
