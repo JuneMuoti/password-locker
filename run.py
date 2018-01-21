@@ -34,7 +34,7 @@ def main():
     print (f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-        print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the contact list")
+        print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the credenial list")
          short_code = input().lower()
          if short_code == 'cu':
              print("NEW PASSWORD LOCKER ACCOUNT")
@@ -99,4 +99,38 @@ def main():
                                      print (f"Account Name:{search_credential.account_name}")
                                      print(f"Account password: {search_credential.account_password}")
                                  else:
+
                                      print("That account does not exixt")
+                                 else if choice == so:
+                                     print ("Are you sure you want to sign out? y/n")
+                                     signout = input().lower()
+                                     if logout == 'y':
+                                         priint:("YOu have signed out succesfully")
+                                         break
+                                 elif logout == 'n':
+                                     continue
+                             elif option == rc:
+                                 While True:
+                                 print ("Enter the name of the credential you want to delete")
+                                 search_name = input()
+                                 if check_existing_credentials(search_name):
+                                     search_credential = find_credential(search_name)
+                                     print(f"Account Name:{search_credential.account_name} \n Password:{search_credential.account_password}")
+                                     print ("Proceed to delete? y/n")
+                                     proceed = input().lower()
+                                     if proceed == 'y':
+                                         del_credential(search_credential)
+                                         print("Credential has been deleted")
+                                         break
+                                     elif proceed == 'n'
+                                     continue
+                             else:
+                                 print ("The credential you entered does not exixt")
+                                 break
+                         else if short_code == ex:
+                             break
+                     else:
+                         print ("Enter a valid choice")
+
+if __name__ == '__main__':
+    main()
