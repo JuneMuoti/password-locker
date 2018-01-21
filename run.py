@@ -1,13 +1,13 @@
 #!/usr/bin/env python3.6
 from credential import Credentials
 from users import user
- def create_credential(accname,password):
+def create_credential(accname,password):
      """
      function to create a new credential
      """
      new_credential = Credentials(accname,password)
      return new_credential
- def save_credential(credential):
+def save_credential(credential):
      """
      function to save a credential
      """
@@ -35,8 +35,8 @@ def main():
     print('\n')
     while True:
         print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the credenial list")
-         short_code = input().lower()
-         if short_code == 'cu':
+        short_code = input().lower()
+        if short_code == 'cu':
              print("NEW PASSWORD LOCKER ACCOUNT")
              print("~" *10)
              print("Enter First Name")
@@ -53,7 +53,7 @@ def main():
              print(f"Congrats {f_name} ,! You have a new Password account")
              print('\n')
              print("proceed to log in to your new account")
-             print("Enter account user name"):
+             print("Enter account user name")
              firstname = input()
              lastname = input()
              print("Enter password:")
@@ -70,7 +70,7 @@ def main():
                  print ('\n')
                  print ("Select from the following choices to continue: Enter vc(to view credentials),ac(to add credential),rc(to remove credential),sc(to search credential),so(to sign out)")
                  print ('\n')
-                 if choice == ac:
+                 if choice == 'ac':
 
                          print ("Enter The Account name(eg facebook,instagram, etc):")
                          account_name = input()
@@ -80,15 +80,15 @@ def main():
                          print('\n')
                          print(f"New credential {account_name} added")
                          print('\n')
-                     else if choice == vc:
-                         print("View all your saved credentials below:")
-                         if display_credentials():
-                             for credential in display_credentials():
-                                 print (f"Account Name:{credential.account_name}")
-                                 print(f"Account Password:{credential.account_password}")
-                             else:
+                elif choice == 'vc':
+                        print("View all your saved credentials below:")
+                        if display_credentials():
+                            for credential in display_credentials():
+                                print (f"Account Name:{credential.account_name}")
+                                print(f"Account Password:{credential.account_password}")
+                        else:
                                  print("You have not added any credential to your password locker account")
-                             else if choice == fc:
+                elif choice == 'fc':
                                  print("Enter the acccount name you want to search for in the list of credentials")
                                  find_name = input()
                                  if check_existing_credentials(find_name):
@@ -101,7 +101,7 @@ def main():
                                  else:
 
                                      print("That account does not exixt")
-                                 else if choice == so:
+                else if choice == 'so':
                                      print ("Are you sure you want to sign out? y/n")
                                      signout = input().lower()
                                      if logout == 'y':
@@ -109,7 +109,7 @@ def main():
                                          break
                                  elif logout == 'n':
                                      continue
-                             elif option == rc:
+                 elif choice == 'rc':
                                  While True:
                                  print ("Enter the name of the credential you want to delete")
                                  search_name = input()
@@ -127,7 +127,7 @@ def main():
                              else:
                                  print ("The credential you entered does not exixt")
                                  break
-                         else if short_code == ex:
+                         else if short_code == 'ex':
                              break
                      else:
                          print ("Enter a valid choice")
