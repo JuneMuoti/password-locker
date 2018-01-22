@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 from credential import Credentials
-from users import user
+from user import User
 def create_credential(accname,password):
      """
      function to create a new credential
@@ -28,11 +28,11 @@ def test_display_credentials():
     """
     return Credentials.display_credentials()
 def main():
-    print("Welcome to Passord Locker")
+    # print ("Welcome to Passord Locker")
     user_name = input()
     print('\n')
     print (f"Hello {user_name}. what would you like to do?")
-    print('\n')
+    # print('/n')
     while True:
         print("Use the following short codes : cu -create a new user ,li -log in to your account,ex -exit the credenial list")
         short_code = input().lower()
@@ -71,63 +71,62 @@ def main():
                  print ("Select from the following choices to continue: Enter vc(to view credentials),ac(to add credential),rc(to remove credential),sc(to search credential),so(to sign out)")
                  print ('\n')
                  if choice == 'ac':
-
-                         print ("Enter The Account name(eg facebook,instagram, etc):")
-                         account_name = input()
-                         print("Enter the account password:")
-                         account_password = input()
-                         save_new_credential(create_new_credential(account_name,account_password))
-                         print('\n')
-                         print(f"New credential {account_name} added")
-                         print('\n')
-                elif choice == 'vc':
-                        print("View all your saved credentials below:")
-                        if display_credentials():
-                            for credential in display_credentials():
-                                print (f"Account Name:{credential.account_name}")
-                                print(f"Account Password:{credential.account_password}")
-                        else:
-                                 print("You have not added any credential to your password locker account")
-                elif choice == 'fc':
-                                 print("Enter the acccount name you want to search for in the list of credentials")
-                                 find_name = input()
-                                 if check_existing_credentials(find_name):
-                                     search_credential = find_credential(find_name)
-                                     print (f"{search_credential.account_name} {search_credential.account_password}")
-                                     print('~' *20)
-                                     print('\n')
-                                     print (f"Account Name:{search_credential.account_name}")
-                                     print(f"Account password: {search_credential.account_password}")
-                                 else:
-
-                                     print("That account does not exixt")
-                else if choice == 'so':
-                                     print ("Are you sure you want to sign out? y/n")
-                                     signout = input().lower()
-                                     if logout == 'y':
-                                         priint:("YOu have signed out succesfully")
-                                         break
-                                 elif logout == 'n':
-                                     continue
+                     print ("Enter The Account name(eg facebook,instagram, etc):")
+                     account_name = input()
+                     print("Enter the account password:")
+                     account_password = input()
+                     save_new_credential(create_new_credential(account_name,account_password))
+                     print('\n')
+                     print(f"New credential {account_name} added")
+                     print('\n')
+                 elif choice == 'vc':
+                     print("View all your saved credentials below:")
+                     if display_credentials():
+                         for credential in display_credentials():
+                             print (f"Account Name:{credential.account_name}")
+                             print(f"Account Password:{credential.account_password}")
+                         else:
+                             print("You have not added any credential to your password locker account")
+                             print('\n')
+                 elif choice == 'fc':
+                    print("Enter the acccount name you want to search for in the list of credentials")
+                    find_name = input()
+                    if check_existing_credentials(find_name):
+                        search_credential = find_credential(find_name)
+                        print (f"{search_credential.account_name} {search_credential.account_password}")
+                        print('~' *20)
+                        print('\n')
+                        print (f"Account Name:{search_credential.account_name}")
+                        print(f"Account password: {search_credential.account_password}")
+                    else:
+                         print("That account does not exixt")
+                 elif choice == 'so':
+                     print ("Are you sure you want to sign out? y/n")
+                     signout = input().lower()
+                     if signout == 'y':
+                         print:("You have signed out succesfully")
+                         break
+                     elif signout == 'n':
+                        continue
                  elif choice == 'rc':
-                                 While True:
-                                 print ("Enter the name of the credential you want to delete")
-                                 search_name = input()
-                                 if check_existing_credentials(search_name):
-                                     search_credential = find_credential(search_name)
-                                     print(f"Account Name:{search_credential.account_name} \n Password:{search_credential.account_password}")
-                                     print ("Proceed to delete? y/n")
-                                     proceed = input().lower()
-                                     if proceed == 'y':
-                                         del_credential(search_credential)
-                                         print("Credential has been deleted")
-                                         break
-                                     elif proceed == 'n'
-                                     continue
+                     while True:
+                         print ("Enter the name of the credential you want to delete")
+                         search_name = input()
+                         if check_existing_credentials(search_name):
+                             search_credential = find_credential(search_name)
+                             print(f"Account Name:{search_credential.account_name} \n Password:{search_credential.account_password}")
+                             print ("Proceed to delete? y/n")
+                             proceed = input().lower()
+                             if proceed == 'y':
+                                 del_credential(search_credential)
+                                 print("Credential has been deleted")
+                                 break
+                             elif proceed == 'n':
+                                continue
                              else:
                                  print ("The credential you entered does not exixt")
                                  break
-                         else if short_code == 'ex':
+                         elif short_code == 'ex':
                              break
                      else:
                          print ("Enter a valid choice")
