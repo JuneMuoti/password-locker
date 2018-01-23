@@ -20,7 +20,7 @@ class Credentials:
         """
         Credentials.credential_list.remove(self)
     @classmethod
-    def find_by_account_name(cls,name):
+    def find_by_account_name(cls,account_name):
         """
         takes in an account name and returns a password that matched that account name
 
