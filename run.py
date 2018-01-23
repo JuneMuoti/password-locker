@@ -63,14 +63,14 @@ def main():
             print('\n')
 
             while True:
-                print("1: View  saved credential")
-                print("2: Add  credential")
-                print("3: Remove credential")
-                print("4: Search credential")
-                print("5: sign Out")
+                print("A: View  saved credential")
+                print("B: Add  credential")
+                print("C: Remove credential")
+                print("D: Search credential")
+                print("E: sign Out")
                 option = input()
 
-                if option == 'B'
+                if option == 'B':
                     while True:
                         print("Continue to add? y/n")
 
@@ -101,7 +101,7 @@ def main():
                             break
                         else:
                             print("Please select  yes or  no!")
-                elif option == '1':
+                elif option == 'A':
                     while True:
                         print("Here  is a list of all your credentials")
                         if display_credentials():
@@ -125,7 +125,7 @@ def main():
                                 print("Please Enter a valid code")
                                 continue
 
-                elif option == '5':
+                elif option == 'E':
                     print("WARNING! You will loose all your credentials if you log out. Are you sure? y/n")
                     logout = input().lower()
 
@@ -156,7 +156,7 @@ def main():
                                 print("That Contact Does not exist")
                                 break
 
-                    elif option == '4':
+                    elif option == 'D':
                         while True:
                             print("Continue? y/n")
                             option2 = input().lower()
@@ -212,7 +212,7 @@ def main():
                 print("5: Log Out")
                 option = input()
 
-                if option == '2':
+                if option == 'B':
                     while True:
                         print("Continue to add? y/n")
 
@@ -245,7 +245,7 @@ def main():
                             break
                         else:
                             print("Please use 'y' for yes or 'n' for no!")
-                elif option == '1':
+                elif option == 'A':
                     while True:
                         print("Below is a list of all your credentials")
                         if display_credentials():
@@ -272,7 +272,7 @@ def main():
                         #     break
                         # else:
                         #     print("Please use y or n")
-                elif option == '5':
+                elif option == 'E':
                     print("WARNING! You will loose all your credentials if you log out. Are you sure? y/n")
                     logout = input().lower()
 
@@ -282,7 +282,7 @@ def main():
                     elif logout == 'n':
                         continue
 
-                elif option == '3':
+                elif option == 'C':
                     while True:
                         print("Search for credential to delete")
 
@@ -304,7 +304,7 @@ def main():
                             print("That Contact Does not exist")
                             break
 
-                elif option == '4':
+                elif option == 'D':
                     while True:
                         print("Continue? y/n")
                         option2 = input().lower()
